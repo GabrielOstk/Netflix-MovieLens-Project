@@ -10,7 +10,6 @@ FROM `netflix-pipeline-gabrielostk.netflix_raw.raw_movies`
 WHERE SAFE_CAST(movieId AS INT64) IS NOT NULL;
 
 
--- Genres Relationship Table: Created to deal with N:N relationship between movies and genres.
 CREATE OR REPLACE TABLE `netflix-pipeline-gabrielostk.netflix_silver.genres_cleaned` AS
 SELECT
   SAFE_CAST(movieId AS INT64) AS movie_id,
